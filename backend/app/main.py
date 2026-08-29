@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.routes import auth, discovery, profiles
+from app.api.routes import discovery, profiles, uploads
 from app.core.config import settings
 
 app = FastAPI(title="Collawork API")
@@ -14,9 +14,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(auth.router)
 app.include_router(profiles.router)
 app.include_router(discovery.router)
+app.include_router(uploads.router)
 
 
 @app.get("/health")

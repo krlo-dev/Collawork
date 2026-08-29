@@ -1,15 +1,15 @@
-# Collawork API (Phase 1)
+# Collawork API (Phase 2)
 
-FastAPI backend for Collawork. Phase 1 scope: local app only (no AWS yet — see `PRD-collawork.md`).
+FastAPI backend for Collawork. Phase 2 scope: real AWS integration for auth and media storage — see `PRD-collawork.md`.
 
-Auth is a local email/password + JWT implementation for now; it will be replaced by Amazon Cognito in Phase 2.
+Auth is handled by Amazon Cognito. The frontend authenticates directly against Cognito (via `amazon-cognito-identity-js`) and sends the resulting ID token as a Bearer token; the API verifies it against Cognito's JWKS on every request (see `app/core/security.py`). There is no local email/password login anymore.
 
 ## Setup
 
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-cp .env.example .env   # adjust DATABASE_URL if needed
+cp .env.example .env   # set DATABASE_URL, AWS_REGION, S3_BUCKET_NAME, COGNITO_USER_POOL_ID, COGNITO_APP_CLIENT_ID
 ```
 
 A local Postgres instance is expected at the URL in `.env`. For local dev without a native Postgres install:
@@ -19,6 +19,8 @@ docker run -d --name collawork-db \
   -e POSTGRES_USER=collawork -e POSTGRES_PASSWORD=collawork -e POSTGRES_DB=collawork \
   -p 5433:5432 -v collawork-db-data:/var/lib/postgresql/data postgres:16
 ```
+
+You'll also need a Cognito User Pool + App Client and an S3 bucket, with their IDs set in `.env`.
 
 ## Migrations
 
@@ -36,7 +38,7 @@ Docs at http://localhost:8000/docs.
 
 ## Endpoints
 
-- `POST /auth/register`, `POST /auth/login` — email/password auth, returns a JWT
-- `GET /users/me`, `PUT /users/me`, `DELETE /users/me` — own profile (skills, bio, location, media URLs)
+- `GET /users/me`, `PUT /users/me`, `DELETE /users/me` — own profile (skills, bio, location, media URLs); requires a valid Cognito Bearer token
 - `GET /users/{id}` — public profile
 - `GET /discovery?skill=&location=&q=` — search/filter profiles
+- `POST /uploads/presign` — get a presigned S3 URL to upload an avatar or banner image

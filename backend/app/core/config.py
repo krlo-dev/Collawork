@@ -5,10 +5,13 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
     database_url: str = "postgresql+psycopg://collawork:collawork@localhost:5433/collawork"
-    jwt_secret_key: str = "change-me-in-dev"
-    jwt_algorithm: str = "HS256"
-    access_token_expire_minutes: int = 1440
     cors_origins: str = "http://localhost:3000"
+
+    aws_region: str = "us-east-1"
+    s3_bucket_name: str = ""
+
+    cognito_user_pool_id: str = ""
+    cognito_app_client_id: str = ""
 
     @property
     def cors_origins_list(self) -> list[str]:

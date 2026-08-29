@@ -27,20 +27,6 @@ async function request<T>(path: string, options: RequestInit = {}, token?: strin
   return res.json() as Promise<T>;
 }
 
-export function registerUser(name: string, email: string, password: string) {
-  return request<{ access_token: string }>("/auth/register", {
-    method: "POST",
-    body: JSON.stringify({ name, email, password }),
-  });
-}
-
-export function loginUser(email: string, password: string) {
-  return request<{ access_token: string }>("/auth/login", {
-    method: "POST",
-    body: JSON.stringify({ email, password }),
-  });
-}
-
 export function getMyProfile(token: string) {
   return request<User>("/users/me", {}, token);
 }
@@ -51,6 +37,32 @@ export function getPublicProfile(id: number | string) {
 
 export function updateMyProfile(token: string, data: ProfileUpdateInput) {
   return request<User>("/users/me", { method: "PUT", body: JSON.stringify(data) }, token);
+}
+
+const ALLOWED_UPLOAD_TYPES = new Set(["image/png", "image/jpeg", "image/webp"]);
+
+export async function uploadProfileImage(token: string, kind: "avatar" | "banner", file: File): Promise<string> {
+  if (!ALLOWED_UPLOAD_TYPES.has(file.type)) {
+    throw new ApiError(415, "Only PNG, JPEG or WEBP images are supported");
+  }
+
+  const { upload_url, object_url } = await request<{ upload_url: string; object_url: string }>(
+    "/uploads/presign",
+    { method: "POST", body: JSON.stringify({ kind, content_type: file.type }) },
+    token,
+  );
+
+  const putRes = await fetch(upload_url, {
+    method: "PUT",
+    headers: { "Content-Type": file.type },
+    body: file,
+  });
+
+  if (!putRes.ok) {
+    throw new ApiError(putRes.status, "Upload to storage failed");
+  }
+
+  return object_url;
 }
 
 export function discoverUsers(params: { skill?: string; location?: string; q?: string }) {

@@ -1,28 +1,41 @@
-from datetime import datetime, timedelta, timezone
-
-import bcrypt
-from jose import JWTError, jwt
+import requests
+from jose import jwt
+from jose.exceptions import JWTError
 
 from app.core.config import settings
 
-
-def hash_password(password: str) -> str:
-    return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
+_jwks_cache: dict | None = None
 
 
-def verify_password(plain_password: str, hashed_password: str) -> bool:
-    return bcrypt.checkpw(plain_password.encode("utf-8"), hashed_password.encode("utf-8"))
+def _cognito_issuer() -> str:
+    return f"https://cognito-idp.{settings.aws_region}.amazonaws.com/{settings.cognito_user_pool_id}"
 
 
-def create_access_token(subject: str) -> str:
-    expire = datetime.now(timezone.utc) + timedelta(minutes=settings.access_token_expire_minutes)
-    payload = {"sub": subject, "exp": expire}
-    return jwt.encode(payload, settings.jwt_secret_key, algorithm=settings.jwt_algorithm)
+def _get_jwks() -> dict:
+    global _jwks_cache
+    if _jwks_cache is None:
+        url = f"{_cognito_issuer()}/.well-known/jwks.json"
+        response = requests.get(url, timeout=5)
+        response.raise_for_status()
+        _jwks_cache = response.json()
+    return _jwks_cache
 
 
-def decode_access_token(token: str) -> str | None:
+def verify_cognito_token(token: str) -> dict | None:
+    """Verify a Cognito ID token and return its claims, or None if invalid."""
     try:
-        payload = jwt.decode(token, settings.jwt_secret_key, algorithms=[settings.jwt_algorithm])
-        return payload.get("sub")
-    except JWTError:
+        unverified_headers = jwt.get_unverified_header(token)
+        kid = unverified_headers.get("kid")
+        key = next((k for k in _get_jwks()["keys"] if k["kid"] == kid), None)
+        if key is None:
+            return None
+
+        return jwt.decode(
+            token,
+            key,
+            algorithms=["RS256"],
+            audience=settings.cognito_app_client_id,
+            issuer=_cognito_issuer(),
+        )
+    except (JWTError, requests.RequestException, KeyError):
         return None
