@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Collawork - Login / Registro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e0e3e8",
+                        "on-primary-fixed-variant": "#293ca0",
+                        "inverse-surface": "#2d3135",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f7f9ff",
+                        "on-primary-container": "#cacfff",
+                        "secondary-fixed": "#6ffbbe",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#00105c",
+                        "surface-tint": "#4355b9",
+                        "surface-dim": "#d7dadf",
+                        "surface-container": "#ebeef3",
+                        "on-background": "#181c20",
+                        "on-surface": "#181c20",
+                        "on-secondary-fixed-variant": "#005236",
+                        "tertiary-fixed-dim": "#ffb784",
+                        "primary-fixed": "#dee0ff",
+                        "surface-bright": "#f7f9ff",
+                        "on-secondary-fixed": "#002113",
+                        "primary-container": "#3f51b5",
+                        "outline": "#757684",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "secondary": "#006c49",
+                        "on-tertiary-fixed": "#301400",
+                        "tertiary": "#6c3400",
+                        "inverse-on-surface": "#eef1f6",
+                        "on-surface-variant": "#454652",
+                        "secondary-container": "#6cf8bb",
+                        "on-secondary": "#ffffff",
+                        "background": "#f7f9ff",
+                        "on-secondary-container": "#00714d",
+                        "primary": "#24389c",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffdcc6",
+                        "primary-fixed-dim": "#bac3ff",
+                        "surface-container-high": "#e5e8ee",
+                        "tertiary-container": "#8f4700",
+                        "inverse-primary": "#bac3ff",
+                        "surface-container-highest": "#e0e3e8",
+                        "surface-container-low": "#f1f4f9",
+                        "on-tertiary-container": "#ffc7a2",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c5c5d4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "12px",
+                        "base": "8px",
+                        "stack-sm": "4px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "stack-lg": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .input-glow:focus {
+            box-shadow: 0 0 0 2px rgba(36, 56, 156, 0.2);
+            border-color: #24389c;
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex items-center justify-center font-body-md antialiased p-margin-mobile md:p-margin-desktop">
+<!-- Main Container -->
+<main class="w-full max-w-md bg-surface-container-lowest border border-outline-variant rounded-lg p-margin-desktop md:p-margin-desktop shadow-sm flex flex-col gap-stack-lg relative overflow-hidden">
+<!-- Logo Section -->
+<header class="flex flex-col items-center justify-center gap-stack-md mb-stack-lg">
+<div class="w-24 h-24 mb-stack-md">
+<img alt="Collawork Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC29kmRYZUfX3-5bfwiswDbUfIAnQHMn-k4VhlXF_lXQA0zE3ZOfk59ElG6ec4t_Pjw_iMo7XJfvc4BI3j6z4yJQERykkWPhqaJ_2Fb-8ye4t83veZgBylCQylGXDEr_Y8S4DqrvPil39aqnvs5v6ceWo0GsdTPXcWxR_ev2ropIRlzr759SPUAQ6kuKzU2bOSTsLZJO-36-IBJZpuiAkUtvJ0gK87EQ1m3pZYetgpo_tU2-Nc4yvnjiw">
+</div>
+<h1 class="text-headline-lg font-headline-lg text-center hidden md:block text-on-surface">Welcome to Collawork</h1>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile text-center md:hidden text-on-surface">Welcome to Collawork</h1>
+<p class="text-body-md font-body-md text-on-surface-variant text-center">Connect with your professional network.</p>
+</header>
+<!-- Form Section -->
+<form class="flex flex-col gap-stack-md w-full">
+<!-- Email Input -->
+<div class="flex flex-col gap-stack-sm">
+<label class="text-label-md font-label-md text-on-surface-variant" for="email">Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-outline-variant pointer-events-none" data-icon="mail">mail</span>
+<input class="w-full pl-10 pr-3 py-3 bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary input-glow text-body-md font-body-md text-on-surface transition-colors duration-200" id="email" name="email" placeholder="Enter your email" required="" type="email">
+</div>
+</div>
+<!-- Password Input -->
+<div class="flex flex-col gap-stack-sm">
+<div class="flex justify-between items-center">
+<label class="text-label-md font-label-md text-on-surface-variant" for="password">Password</label>
+<a class="text-label-md font-label-md text-primary hover:text-on-primary-fixed-variant transition-colors duration-200" href="#">Forgot password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-outline-variant pointer-events-none" data-icon="lock">lock</span>
+<input class="w-full pl-10 pr-3 py-3 bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary input-glow text-body-md font-body-md text-on-surface transition-colors duration-200" id="password" name="password" placeholder="Enter your password" required="" type="password">
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-stack-md mt-stack-md">
+<button class="w-full bg-primary text-on-primary py-3 px-6 rounded text-label-md font-label-md hover:bg-on-primary-fixed-variant transition-colors duration-200 flex justify-center items-center gap-2" type="submit">
+                    Sign In
+                    <span class="material-symbols-outlined text-sm" data-icon="login">login</span>
+</button>
+<div class="relative flex items-center justify-center py-2">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant"></div>
+</div>
+<div class="relative px-4 bg-surface-container-lowest text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Or</div>
+</div>
+<button class="w-full bg-transparent border border-outline-variant text-on-surface py-3 px-6 rounded text-label-md font-label-md hover:bg-surface-container transition-colors duration-200 flex justify-center items-center" type="button">
+                    Create Account
+                </button>
+</div>
+</form>
+</main>
+
+
+</body></html>

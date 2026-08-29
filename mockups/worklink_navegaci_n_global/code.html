@@ -1,0 +1,293 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title class="">Collawork Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e0e3e8",
+                        "on-primary-fixed-variant": "#293ca0",
+                        "inverse-surface": "#2d3135",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f7f9ff",
+                        "on-primary-container": "#cacfff",
+                        "secondary-fixed": "#6ffbbe",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#00105c",
+                        "surface-tint": "#4355b9",
+                        "surface-dim": "#d7dadf",
+                        "surface-container": "#ebeef3",
+                        "on-background": "#181c20",
+                        "on-surface": "#181c20",
+                        "on-secondary-fixed-variant": "#005236",
+                        "tertiary-fixed-dim": "#ffb784",
+                        "primary-fixed": "#dee0ff",
+                        "surface-bright": "#f7f9ff",
+                        "on-secondary-fixed": "#002113",
+                        "primary-container": "#3f51b5",
+                        "outline": "#757684",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "secondary": "#006c49",
+                        "on-tertiary-fixed": "#301400",
+                        "tertiary": "#6c3400",
+                        "inverse-on-surface": "#eef1f6",
+                        "on-surface-variant": "#454652",
+                        "secondary-container": "#6cf8bb",
+                        "on-secondary": "#ffffff",
+                        "background": "#f7f9ff",
+                        "on-secondary-container": "#00714d",
+                        "primary": "#24389c",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffdcc6",
+                        "primary-fixed-dim": "#bac3ff",
+                        "surface-container-high": "#e5e8ee",
+                        "tertiary-container": "#8f4700",
+                        "inverse-primary": "#bac3ff",
+                        "surface-container-highest": "#e0e3e8",
+                        "surface-container-low": "#f1f4f9",
+                        "on-tertiary-container": "#ffc7a2",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#c5c5d4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "12px",
+                        "base": "8px",
+                        "stack-sm": "4px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "stack-lg": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[style*="'FILL' 1"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 bg-surface-container-lowest border-b border-outline-variant hidden md:flex">
+<div class="flex items-center gap-gutter">
+<div class="flex items-center gap-stack-sm">
+<img alt="Collawork Logo" class="h-8 w-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC29kmRYZUfX3-5bfwiswDbUfIAnQHMn-k4VhlXF_lXQA0zE3ZOfk59ElG6ec4t_Pjw_iMo7XJfvc4BI3j6z4yJQERykkWPhqaJ_2Fb-8ye4t83veZgBylCQylGXDEr_Y8S4DqrvPil39aqnvs5v6ceWo0GsdTPXcWxR_ev2ropIRlzr759SPUAQ6kuKzU2bOSTsLZJO-36-IBJZpuiAkUtvJ0gK87EQ1m3pZYetgpo_tU2-Nc4yvnjiw">
+<span class="text-headline-md font-headline-md font-bold text-primary">Collawork</span>
+</div>
+<div class="relative hidden lg:block ml-gutter">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant">search</span>
+<input class="pl-10 pr-4 py-2 border border-outline-variant rounded bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all w-64 text-label-md font-label-md placeholder-outline-variant" placeholder="Search..." type="text">
+</div>
+</div>
+<ul class="flex items-center gap-stack-lg h-full">
+<li class="h-full flex items-center pt-1">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-label-md font-label-md h-full flex items-center pb-1" href="#">Discover</a>
+</li>
+<li class="h-full flex items-center pt-1">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 text-label-md font-label-md h-full flex items-center pb-1" href="#">Collaborators</a>
+</li>
+<li class="h-full flex items-center pt-1">
+<a class="text-primary border-b-2 border-primary text-label-md font-label-md h-full flex items-center pb-1 opacity-80 transition-opacity" href="#">Network</a>
+</li>
+</ul>
+<div class="flex items-center gap-stack-md">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant ml-stack-sm cursor-pointer hover:border-primary transition-colors">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a confident individual in business casual attire against a clean, neutral white background. Soft, even lighting highlights a welcoming expression, suitable for a corporate social network avatar. The minimalist setting keeps the focus entirely on the subject, exuding competence and approachability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFgMEMj5gxDw2DGMpZyIK9_H6edB8BSzCM3L9tMQgWAgVHyeHzb9-1yjWo15soldHb3yMrFTt_H1hvcmRgLLnsPfYCL45vChWjDRwXFNhF8Czj81m6qWaqGfuLGXL6e-I_F_egxASQL-ldemZR5lPwxiWEVvB_i7fUE36RNFXu00xRSiGYTsT0jkcPGtlPOfLC1Q4Rz5jvQ09Yy9P5auQDsINfxkvrvg-Pul_4pb6BVQVyjchZbB2mBQ">
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="pt-24 pb-20 md:pb-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-stack-lg">
+<!-- Left Sidebar (Profile Summary) -->
+<aside class="md:col-span-3 space-y-stack-lg hidden md:block">
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-stack-lg flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full overflow-hidden mb-stack-md border-2 border-surface-container">
+<img class="w-full h-full object-cover" data-alt="A close-up, professional portrait of a modern corporate professional. They are dressed in smart-casual attire, looking directly at the camera with a subtle, confident smile. The background is a soft, blurred office environment with bright, natural lighting. The overall tone is polished, approachable, and highly professional, fitting for a minimalist network profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxLnWKb767r2CiAmczah17vFBrvYO8AzGrxxDt3eQjb-aMOFXL8Bm-9dsLWK4706zWgUloPsqQsVXamoldx0veqmcCYVRLmkjwwfYGZ15pfSQ913jkh_cNfjjvv6iHfhpXvq0tDNn0OQUeJtk9pUMj1VyijuzVmYq9h55Dc68qaUznFiZvDA7mQOAj-3_j1DifQgSIgws8jZAo4yJ8IAgJUbD_Kc67-0Icfaz4QD0NpfR2NiazCpAQAg">
+</div>
+<h2 class="text-headline-md font-headline-md text-on-surface mb-stack-sm">Alex Chen</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mb-stack-lg">Senior Product Designer at TechFlow</p>
+<div class="w-full border-t border-surface-container pt-stack-md flex justify-between">
+<span class="text-label-md font-label-md text-on-surface-variant">Profile Views</span>
+<span class="text-label-md font-label-md text-primary font-bold">1,204</span>
+</div>
+<div class="w-full flex justify-between mt-stack-sm">
+<span class="text-label-md font-label-md text-on-surface-variant">Connections</span>
+<span class="text-label-md font-label-md text-primary font-bold">500+</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-stack-lg">
+<h3 class="text-label-md font-label-md font-semibold text-on-surface mb-stack-md">Top Skills</h3>
+<div class="flex flex-wrap gap-stack-sm">
+<span class="bg-surface-container text-on-surface-variant text-label-sm font-label-sm px-3 py-1 rounded">UI Design</span>
+<span class="bg-surface-container text-on-surface-variant text-label-sm font-label-sm px-3 py-1 rounded">Prototyping</span>
+<span class="bg-surface-container text-on-surface-variant text-label-sm font-label-sm px-3 py-1 rounded">Design Systems</span>
+</div>
+</div>
+</aside>
+<!-- Center Feed -->
+<section class="md:col-span-6 space-y-stack-lg">
+<!-- Create Post Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-stack-lg flex gap-stack-md items-start">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A small, circular avatar showing a professional's face against a light grey background. The image is crisp, well-lit, and conveys a sense of readiness for business interaction. The style is minimalist and clean, aligning with a high-end corporate application aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwyc0mjfdfF2LYUCT3TWtF7LpN3bHB--QGVovYSbGwupOmf95RoswKs_vmntoyrOrZRfY1WS07iSYbG8xHHi7G5nWmghf-pRnZe3AuZP3RIg-vdUW-zeEd-_KDQkHOlWKp1j1HMwdwB--7MgWVge-P1aOFfahBHPo4_BewODJ_46XnfmY-fpFSIIALoKRVQgn-bX7H_y0-mp5sZdtAHe7ibMUhLBCtddZeTrKB-a4yjGV9igYdZ9dkwQ">
+</div>
+<div class="flex-grow">
+<input class="w-full border border-outline-variant rounded bg-surface-container-low px-4 py-3 text-body-md font-body-md text-on-surface placeholder-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" placeholder="Share an update or article..." type="text">
+<div class="flex justify-between items-center mt-stack-md">
+<div class="flex gap-stack-sm">
+<button class="text-on-surface-variant hover:bg-surface-container p-2 rounded transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">image</span>
+<span class="text-label-sm font-label-sm hidden sm:inline">Photo</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container p-2 rounded transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">event</span>
+<span class="text-label-sm font-label-sm hidden sm:inline">Event</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary text-label-md font-label-md px-6 py-2 rounded hover:bg-primary-container transition-colors">Post</button>
+</div>
+</div>
+</div>
+<!-- Feed Item -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded p-stack-lg">
+<div class="flex justify-between items-start mb-stack-md">
+<div class="flex gap-stack-md items-center">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a senior executive woman looking confident. She is wearing a dark blazer over a light blouse. The background is a clean, bright white space, reflecting a modern, minimalist corporate branding style. The lighting is soft but defining, emphasizing professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsRy8knUlfucCK5L2-tsBdSX91ZVKIP3-uGktpE9sJztNRLndDjB2s72gpDudCNQnx_GZoe4tpHb5ktytT-ZIlS6M7CDW-KFydoNaFs8jQ2nAk3s3aIRlcjfjtIOPATx9w0_o6zupr9Btm4_7_3kj6-BIHS4KjdGe51Bd0WHkezLkBW9iQyqw0uleLzHZwuZpNMJyL3yiVoupeZZHNtLozXIms0BQu0LazDXkMHcFDxWGeDuuVK6lA9g">
+</div>
+<div>
+<h4 class="text-label-md font-label-md text-on-surface font-semibold">Sarah Jenkins</h4>
+<p class="text-label-sm font-label-sm text-on-surface-variant">VP of Engineering at CloudSync • 2h</p>
+</div>
+</div>
+<button class="text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<p class="text-body-md font-body-md text-on-surface mb-stack-md leading-relaxed">
+                        Thrilled to announce the launch of our new distributed caching architecture today. The team has been working tirelessly to reduce latency across our global nodes, and initial metrics are showing a 40% improvement in response times.
+                    </p>
+<div class="w-full h-64 rounded bg-surface-container mb-stack-md overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="An abstract, high-quality digital illustration representing a modern technological architecture or network for Collawork. The visual features interconnected nodes, clean geometric lines, and a subtle glowing effect against a light grey or white background, matching a minimalist, bright corporate aesthetic. The colors are muted blues and greys, conveying stability and speed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJxZ24MuehjkE-OHzBb4QqKmGlx4sLpImu0iuiMIN21Q3HJhwTFkHdlEUTKtRtzUlzWZHtQoHyFNevIaAqIIJJGO1Xl4NQO2fUK53Xr8R5-h2nTrutA9sdGBmWnl7GVks4bxWYl_17AQhnHsdE1VuEnCX7e7KuU_a6iXWzfwv7Zzm9IDVEalnHouz2vz_dhZ0fHbu4YiBZR_0Fr_oIeJKht9ECg7MAlXL9c-CGs0DPHhkERPrefRjAKA">
+</div>
+<div class="border-t border-surface-container pt-stack-sm flex gap-stack-lg">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined">thumb_up</span>
+                            245
+                        </button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined">chat_bubble_outline</span>
+                            42
+                        </button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md ml-auto">
+<span class="material-symbols-outlined">share</span>
+                            Share
+                        </button>
+</div>
+</article>
+</section>
+<!-- Right Sidebar (Network Suggestions) -->
+<aside class="md:col-span-3 space-y-stack-lg hidden md:block">
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-stack-lg">
+<h3 class="text-label-md font-label-md font-semibold text-on-surface mb-stack-md">Grow Your Network</h3>
+<div class="space-y-stack-md">
+<!-- Suggestion 1 -->
+<div class="flex items-start gap-stack-md">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0 mt-1">
+<img class="w-full h-full object-cover" data-alt="A small, clear headshot of a young male professional in a light grey button-down shirt. The background is a stark white, emphasizing a clean, corporate aesthetic. The expression is friendly and approachable, suitable for a professional networking suggestion list." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIQR900WtscFMrT8uxJKb0TyMHjFfPFm6pjIIyhrAXOb5MejgZsKEVU0abATrhgjY1CedcMx16OIDjORY_5lEYM7BmFgjziUmHR--kDQ_BclF77rh7vL_sBrx_tHCAsk1HuM3nYMnKENeow4DRzh4rU-u1o4L2av957WmrLcBihz6ZHUz4elDujwQLm_Y5R-q7-n12fUQRkyUJj6OhjNJ1b1nh_T2-hS3485jAFbWi4yxf7nbVIJUq9w">
+</div>
+<div>
+<h4 class="text-label-md font-label-md text-on-surface">David Kim</h4>
+<p class="text-label-sm font-label-sm text-on-surface-variant mb-2">Frontend Developer</p>
+<button class="border border-outline-variant text-on-surface text-label-sm font-label-sm px-4 py-1 rounded hover:border-primary hover:text-primary transition-colors">Connect</button>
+</div>
+</div>
+<!-- Suggestion 2 -->
+<div class="flex items-start gap-stack-md">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0 mt-1">
+<img class="w-full h-full object-cover" data-alt="A portrait of a female professional with glasses, looking focused and competent. She is set against a minimalist light background. The lighting is even and bright, highlighting a polished, modern corporate look appropriate for an executive networking platform sidebar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH_20jy-0VEqqiLEIAS0r28BWL4hNrthDvbeQKkXgkLpomPuXXxO-DqsopQO8Xo-HWOK5ndU6O7tqHYpTyZMD_Hz0wDCZF8RJFENjsjbhT9WZjQPeJxaD2HejBhqc3Ur5JOOYl7c2rGuxqYE2AH05Md9wnhBwwYcKa8X14MDlXRBa96MT8smxIxTX7nOyVjeY2635DpVH1J29_K0J-Z_z1rS-NFtUHJ66ee3RzhaPdWZ3i77jkR0PsXQ">
+</div>
+<div>
+<h4 class="text-label-md font-label-md text-on-surface">Elena Rodriguez</h4>
+<p class="text-label-sm font-label-sm text-on-surface-variant mb-2">UX Researcher</p>
+<button class="border border-outline-variant text-on-surface text-label-sm font-label-sm px-4 py-1 rounded hover:border-primary hover:text-primary transition-colors">Connect</button>
+</div>
+</div>
+</div>
+<button class="text-primary text-label-sm font-label-sm mt-stack-lg hover:underline">View all suggestions</button>
+</div>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 md:hidden bg-surface-container-lowest border-t border-outline-variant">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors w-full h-full" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-label-sm font-label-sm">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors w-full h-full" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="text-label-sm font-label-sm">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold scale-95 transition-transform duration-150 w-full h-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-label-sm font-label-sm">Network</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors w-full h-full" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+
+
+</body></html>

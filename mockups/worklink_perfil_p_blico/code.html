@@ -1,0 +1,284 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Collawork - Perfil Público</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#e0e3e8",
+                      "on-primary-fixed-variant": "#293ca0",
+                      "inverse-surface": "#2d3135",
+                      "error-container": "#ffdad6",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#f7f9ff",
+                      "on-primary-container": "#cacfff",
+                      "secondary-fixed": "#6ffbbe",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#00105c",
+                      "surface-tint": "#4355b9",
+                      "surface-dim": "#d7dadf",
+                      "surface-container": "#ebeef3",
+                      "on-background": "#181c20",
+                      "on-surface": "#181c20",
+                      "on-secondary-fixed-variant": "#005236",
+                      "tertiary-fixed-dim": "#ffb784",
+                      "primary-fixed": "#dee0ff",
+                      "surface-bright": "#f7f9ff",
+                      "on-secondary-fixed": "#002113",
+                      "primary-container": "#3f51b5",
+                      "outline": "#757684",
+                      "on-error": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed-dim": "#4edea3",
+                      "secondary": "#006c49",
+                      "on-tertiary-fixed": "#301400",
+                      "tertiary": "#6c3400",
+                      "inverse-on-surface": "#eef1f6",
+                      "on-surface-variant": "#454652",
+                      "secondary-container": "#6cf8bb",
+                      "on-secondary": "#ffffff",
+                      "background": "#f7f9ff",
+                      "on-secondary-container": "#00714d",
+                      "primary": "#24389c",
+                      "on-tertiary-fixed-variant": "#713700",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#ffdcc6",
+                      "primary-fixed-dim": "#bac3ff",
+                      "surface-container-high": "#e5e8ee",
+                      "tertiary-container": "#8f4700",
+                      "inverse-primary": "#bac3ff",
+                      "surface-container-highest": "#e0e3e8",
+                      "surface-container-low": "#f1f4f9",
+                      "on-tertiary-container": "#ffc7a2",
+                      "on-error-container": "#93000a",
+                      "outline-variant": "#c5c5d4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-md": "12px",
+                      "base": "8px",
+                      "stack-sm": "4px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "stack-lg": "24px",
+                      "margin-mobile": "16px",
+                      "container-max": "1200px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background min-h-screen pt-16 font-body-md">
+<!-- TopNavBar component -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-gutter">
+<div class="flex items-center gap-2"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC29kmRYZUfX3-5bfwiswDbUfIAnQHMn-k4VhlXF_lXQA0zE3ZOfk59ElG6ec4t_Pjw_iMo7XJfvc4BI3j6z4yJQERykkWPhqaJ_2Fb-8ye4t83veZgBylCQylGXDEr_Y8S4DqrvPil39aqnvs5v6ceWo0GsdTPXcWxR_ev2ropIRlzr759SPUAQ6kuKzU2bOSTsLZJO-36-IBJZpuiAkUtvJ0gK87EQ1m3pZYetgpo_tU2-Nc4yvnjiw" alt="Collawork Logo" class="h-8 w-auto"><span class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim">Collawork</span></div>
+<div class="hidden md:flex gap-gutter ml-8">
+<a class="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant pb-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Discover</a>
+<a class="text-label-md font-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 opacity-80 transition-opacity" href="#">Collaborators</a>
+<a class="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant pb-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Network</a>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">chat_bubble</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-variant border border-outline-variant ml-2">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="A professional headshot of an individual, suitable for a corporate profile avatar. Minimalist light mode aesthetic, soft high-key lighting, clean white background, conveying a high-end corporate reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuskML2yg7u1jYZ_AQoVKDTKAlGo6c2HK2m0dmCXOg2WQmAnIQZRME7LFDt_EAr1BnkJSInN53r00gZhHo5LrHZcujkKoFPPkYGkfUsJWQKOc7E2Hx5q7LPhe5lAo6FKDsq2OuW0Wgp3htTzPtGbhi3Egp7s6WAWeX8dsE6VvT8OopytE-cu1tVNd7rdqqOvhLyaio3PjOkM_5_Ox_NN-YNcoN6BvIt8SYxQ0DjH_HM2tdo_TAHPqvnQ">
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="w-full pb-margin-desktop">
+<!-- Banner Image -->
+<div class="w-full h-[300px] md:h-[400px] relative bg-surface-container-low overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full" data-alt="A sophisticated abstract architectural background image showing clean lines of modern office buildings against a clear sky. The lighting is soft and natural, emphasizing a minimalist, high-end professional corporate environment. Colors are muted greys, whites, and subtle blues." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzCc1_QxzZzZZU-XwWQbn5HC9POyVbyod780SX5O7tIFXWAeG5LAnRgdE8DiytIlvQ01nYz1Xjwg-ii_po-C58qzbDvUFUFAEodQoKDKeJ0vNWptGbOLN_Fyssyw3p7JVi-9WpNUDLAOsxlkZJThITzEsrn_lgbIVrY61k3THt9ynh-8qmNCnvbYIQ2NXW8vMf-KYN1XZMV5BUxf3744HkIACNGBjjFqv-j8jz5mJAkOph_23KRsB4IA')"></div>
+<!-- Gradient Overlay for smooth transition if needed, kept subtle -->
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-background/20"></div>
+</div>
+<!-- Profile Hero Section -->
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl -mt-24 md:-mt-32 relative z-10 p-stack-lg mb-stack-lg shadow-sm">
+<div class="flex flex-col md:flex-row items-start md:items-end gap-gutter pb-stack-lg border-b border-surface-variant">
+<!-- Profile Picture -->
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-full border-4 border-surface-container-lowest overflow-hidden bg-surface-variant flex-shrink-0 -mt-16 md:-mt-24 shadow-md">
+<img alt="Profile Picture" class="w-full h-full object-cover" data-alt="A highly professional portrait of a senior executive, looking approachable yet authoritative. High-end lighting setup with a soft, minimalist corporate background. The aesthetic is clean, light mode, and emphasizes institutional reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfpjZgLnydfWXfz40AcVZZITp_7sxYaJmLG_ZNzldLYLG0Pg41w9r4HgFqTgOU-TawL21e_3cN7O0e3BqihGok4npRU6_uq6Hy6cKu68SOb8tERQv7rhdylBvEyScVnn30JmydIsyVq0OpTz9ABehfi1VYJqglKcDxtZ4ZhJfVPZOJgsLPkdDaOqt55-O0PXXsnKq5fHcIdpaaxaYGIizrlUGNdA65ZgFJ1lQ4nFWeWY2s7bD3OYfTvw">
+</div>
+<!-- Identity & Title -->
+<div class="flex-grow pt-4 md:pt-0">
+<h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-on-surface mb-stack-sm">Elena Rodriguez</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-stack-sm">Principal Product Designer at TechGlobal</p>
+<div class="flex items-center text-label-md font-label-md text-outline gap-1">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="">San Francisco, California</span>
+</div>
+</div>
+<!-- Primary Action -->
+<div class="w-full md:w-auto pt-stack-md md:pt-0 flex-shrink-0">
+<button class="w-full md:w-auto bg-primary text-on-primary rounded px-[24px] py-[12px] text-label-md font-label-md hover:bg-primary-fixed-variant transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+                            Contact
+                        </button>
+</div>
+</div>
+<!-- Bento Grid Content Area -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-stack-lg">
+<!-- Main Left Column (Bio & Experience Summary) -->
+<div class="md:col-span-2 space-y-stack-lg">
+<!-- Bio Section -->
+<section>
+<h2 class="text-headline-md font-headline-md text-on-surface mb-stack-md">About</h2>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+                                Dedicated design leader with over 10 years of experience crafting intuitive, user-centric digital experiences. Specializing in bridging the gap between complex business requirements and elegant interface solutions. Passionate about establishing robust design systems and mentoring next-generation talent to foster a culture of design excellence and strategic thinking.
+                            </p>
+</section>
+<!-- Highlights / Quick Stats -->
+<section class="grid grid-cols-2 sm:grid-cols-4 gap-stack-md">
+<div class="bg-surface-container-low p-stack-md rounded-lg border border-surface-variant flex flex-col items-center justify-center text-center">
+<span class="text-headline-md font-headline-md text-primary mb-1">10+</span>
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Years Exp</span>
+</div>
+<div class="bg-surface-container-low p-stack-md rounded-lg border border-surface-variant flex flex-col items-center justify-center text-center">
+<span class="text-headline-md font-headline-md text-primary mb-1">50+</span>
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Projects</span>
+</div>
+<div class="bg-surface-container-low p-stack-md rounded-lg border border-surface-variant flex flex-col items-center justify-center text-center">
+<span class="text-headline-md font-headline-md text-primary mb-1">3</span>
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Patents</span>
+</div>
+<div class="bg-surface-container-low p-stack-md rounded-lg border border-surface-variant flex flex-col items-center justify-center text-center">
+<span class="text-headline-md font-headline-md text-primary mb-1">20</span>
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Mentees</span>
+</div>
+</section>
+</div>
+<!-- Right Column (Skills & Sidebar Info) -->
+<div class="space-y-stack-lg">
+<!-- Skills Section -->
+<section class="bg-surface-container-low p-stack-md rounded-lg border border-surface-variant">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-stack-md">Core Competencies</h2>
+<div class="flex flex-wrap gap-stack-sm">
+<span class="bg-[#F3F4F6] text-[#374151] px-3 py-1 rounded-[4px] text-label-md font-label-md border border-transparent">Design Systems</span>
+<span class="bg-[#F3F4F6] text-[#374151] px-3 py-1 rounded-[4px] text-label-md font-label-md border border-transparent">UX Strategy</span>
+<span class="bg-[#F3F4F6] text-[#374151] px-3 py-1 rounded-[4px] text-label-md font-label-md border border-transparent">Prototyping</span>
+<span class="bg-[#F3F4F6] text-[#374151] px-3 py-1 rounded-[4px] text-label-md font-label-md border border-transparent">User Research</span>
+<span class="bg-[#F3F4F6] text-[#374151] px-3 py-1 rounded-[4px] text-label-md font-label-md border border-transparent">Figma</span>
+<span class="bg-[#F3F4F6] text-[#374151] px-3 py-1 rounded-[4px] text-label-md font-label-md border border-transparent">Leadership</span>
+<span class="bg-[#F3F4F6] text-[#374151] px-3 py-1 rounded-[4px] text-label-md font-label-md border border-transparent">Information Architecture</span>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar for Mobile (Suppressed here as per rules, this is a top-level destination but usually desktop focus for profiles, adding it just to satisfy the component if needed, though instruction says "BottomNavBar or SideNav if current screen represents a top-level destination... Profile is active". Wait, the rule says: "If designing a user settings page, 'Profile' is active... You MUST accurately determine the active navigation tab". Since this is a public profile view, maybe it's not THEIR profile, it's a collaborator. I will not render Bottom Nav for public profile viewing as it's a detail view, but if forced, I'd highlight nothing. I'll omit BottomNav to keep the canvas clean as it's a 'Profile View' which implies detail.) -->
+<!-- Rule check: "Automatic Suppression: You MUST exclude the navigation shell if the page intent is: ... Task-Focused: Any sub-page featuring a 'Close' or 'Back' action that implies a temporary departure from the main navigation flow." Viewing another user's profile is a departure. Therefore, TopNav is enough as an anchor, BottomNav is suppressed. -->
+
+
+</body></html>

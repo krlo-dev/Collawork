@@ -1,0 +1,380 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title class="">Collawork - Feed / Descubrimiento</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#e0e3e8",
+                      "on-primary-fixed-variant": "#293ca0",
+                      "inverse-surface": "#2d3135",
+                      "error-container": "#ffdad6",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#f7f9ff",
+                      "on-primary-container": "#cacfff",
+                      "secondary-fixed": "#6ffbbe",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#00105c",
+                      "surface-tint": "#4355b9",
+                      "surface-dim": "#d7dadf",
+                      "surface-container": "#ebeef3",
+                      "on-background": "#181c20",
+                      "on-surface": "#181c20",
+                      "on-secondary-fixed-variant": "#005236",
+                      "tertiary-fixed-dim": "#ffb784",
+                      "primary-fixed": "#dee0ff",
+                      "surface-bright": "#f7f9ff",
+                      "on-secondary-fixed": "#002113",
+                      "primary-container": "#3f51b5",
+                      "outline": "#757684",
+                      "on-error": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed-dim": "#4edea3",
+                      "secondary": "#006c49",
+                      "on-tertiary-fixed": "#301400",
+                      "tertiary": "#6c3400",
+                      "inverse-on-surface": "#eef1f6",
+                      "on-surface-variant": "#454652",
+                      "secondary-container": "#6cf8bb",
+                      "on-secondary": "#ffffff",
+                      "background": "#f7f9ff",
+                      "on-secondary-container": "#00714d",
+                      "primary": "#24389c",
+                      "on-tertiary-fixed-variant": "#713700",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#ffdcc6",
+                      "primary-fixed-dim": "#bac3ff",
+                      "surface-container-high": "#e5e8ee",
+                      "tertiary-container": "#8f4700",
+                      "inverse-primary": "#bac3ff",
+                      "surface-container-highest": "#e0e3e8",
+                      "surface-container-low": "#f1f4f9",
+                      "on-tertiary-container": "#ffc7a2",
+                      "on-error-container": "#93000a",
+                      "outline-variant": "#c5c5d4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-md": "12px",
+                      "base": "8px",
+                      "stack-sm": "4px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "stack-lg": "24px",
+                      "margin-mobile": "16px",
+                      "container-max": "1200px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9ff;
+        }
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pt-16 pb-16 md:pb-0">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline hidden md:flex">
+<div class="flex items-center gap-stack-lg">
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC29kmRYZUfX3-5bfwiswDbUfIAnQHMn-k4VhlXF_lXQA0zE3ZOfk59ElG6ec4t_Pjw_iMo7XJfvc4BI3j6z4yJQERykkWPhqaJ_2Fb-8ye4t83veZgBylCQylGXDEr_Y8S4DqrvPil39aqnvs5v6ceWo0GsdTPXcWxR_ev2ropIRlzr759SPUAQ6kuKzU2bOSTsLZJO-36-IBJZpuiAkUtvJ0gK87EQ1m3pZYetgpo_tU2-Nc4yvnjiw" alt="Collawork Logo" class="h-8 w-auto object-contain">
+<div class="relative ml-8">
+<span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg text-body-md font-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-64 transition-all" placeholder="Search Collawork" type="text">
+</div>
+</div>
+<div class="flex gap-gutter h-full items-end">
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 text-label-md font-label-md flex flex-col items-center opacity-80 transition-opacity" href="#">
+<span class="">Discover</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant pb-1 text-label-md font-label-md flex flex-col items-center hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">
+<span class="">Collaborators</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant pb-1 text-label-md font-label-md flex flex-col items-center hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">
+<span class="">Network</span>
+</a>
+</div>
+<div class="flex items-center gap-stack-md text-primary dark:text-primary-fixed-dim">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+<img alt="User avatar" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a corporate executive in a modern office setting. High key lighting, clean background, minimalist aesthetic, deep blacks, pure whites, subtle indigo accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXixuWH9www_wrWD-EVlijdoOfWopZCpiMRE5gUqBobvwr0Hv4I65dcK2OBHK8D4SxNdrmYv06ylSzbN8kQLC0dw1_GXJLYj3-rllPJMrdihsLnjFrJI4NOsyHUzQj_pmhV_WWojvao96nBP1Vo96jSrNR83hYyXv0Yy15ggl-46IK4lDDyGx2BGY9vj-jNzqVA4Tkyj0WZ2N90LxnabTBC2l-8bqMklUSq8SbPwhZFyfW5txqgFMNWA">
+</div>
+</nav>
+<!-- Main Content -->
+<main class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filters (Desktop) -->
+<aside class="hidden md:block w-64 shrink-0">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-lg sticky top-24">
+<h2 class="text-headline-md font-headline-md mb-stack-md">Filters</h2>
+<div class="mb-stack-lg">
+<h3 class="text-label-md font-label-md text-on-surface-variant mb-stack-sm">Skills</h3>
+<div class="flex flex-wrap gap-stack-sm">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-label-sm font-label-sm rounded-lg border border-transparent hover:border-outline-variant cursor-pointer transition-colors">UX Design</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-label-sm font-label-sm rounded-lg border border-transparent hover:border-outline-variant cursor-pointer transition-colors">Product Management</span>
+<span class="px-3 py-1 bg-primary text-on-primary text-label-sm font-label-sm rounded-lg cursor-pointer">Engineering</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant text-label-sm font-label-sm rounded-lg border border-transparent hover:border-outline-variant cursor-pointer transition-colors">Data Science</span>
+</div>
+</div>
+<div>
+<h3 class="text-label-md font-label-md text-on-surface-variant mb-stack-sm">Location</h3>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-2 text-body-md font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option>Anywhere</option>
+<option>San Francisco, CA</option>
+<option>New York, NY</option>
+<option>Remote</option>
+</select>
+</div>
+</div>
+</aside>
+<!-- Feed Grid -->
+<div class="flex-1">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-stack-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-md hover:shadow-sm transition-shadow group flex flex-col">
+<div class="flex items-center gap-stack-md mb-stack-md">
+<img alt="Profile" class="w-16 h-16 rounded-full object-cover border border-surface-container-high" data-alt="A professional headshot of a female software engineer. Bright office environment, minimalist style, corporate aesthetic, subtle blue tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPSiHgJlA4nq0zErlIPnrqXV4oos_kepg8n3xbXwrou8DBv6wLGwkD_rXw_Stij_xSIMH3FQbYDmlaSQsqEGhQHP6ph-amw1Vg6k60MbYbjAUZYRXe6SeWNBh5VPthj6jHs_S9uOM1PFWl7bAhVGHIgBigCrOU3DZywohH1MMGY6o5PbOvQSbKR1av9lPV7iC3mVpuLmErZNpZbjxslkYoN3ID1Ohi91IusQ9YqXmgoV7qR4Sg_uTXiQ">
+<div>
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors">Sarah Jenkins</h3>
+<p class="text-label-md font-label-md text-on-surface-variant">Senior Frontend Engineer</p>
+<p class="text-label-sm font-label-sm text-outline flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> San Francisco, CA
+                            </p>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mb-stack-md flex-1">
+                        Passionate about building accessible and performant web applications. Experienced in leading cross-functional teams.
+                    </p>
+<div class="flex flex-wrap gap-stack-sm mb-stack-md">
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm rounded border border-outline-variant">React</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm rounded border border-outline-variant">TypeScript</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm rounded border border-outline-variant">UI Architecture</span>
+</div>
+<button class="w-full py-2 border border-outline-variant text-on-surface text-label-md font-label-md rounded hover:bg-surface-container-low transition-colors">Connect</button>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-md hover:shadow-sm transition-shadow group flex flex-col">
+<div class="flex items-center gap-stack-md mb-stack-md">
+<img alt="Profile" class="w-16 h-16 rounded-full object-cover border border-surface-container-high" data-alt="A professional headshot of a male product manager in a minimal studio setting. Crisp lighting, corporate look, neutral background, deep blue jacket." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDFTQNj81mlzESLAhEH3qAB-nIlawDKpvhQAI-pnn7Ulqkg3-Hwwuwd_4el1Pk1o7Btm-EbyNqlmc-5LAn3krGCxogVCnw4mhfyeEeNVP2ZZK2NHvIcqWb_JusnucDyt4oZQDdqABY2aKvQkwgElTNqC20E_2tofHEn-pTRu8mXIQwQyW6UHfNY4iMAnPp2pHjChBUOmlMfYBBHosIsmrYoPphUUs5DDvSm2H8B1L-ErwOwrnMtagycg">
+<div>
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors">Marcus Chen</h3>
+<p class="text-label-md font-label-md text-on-surface-variant">Director of Product</p>
+<p class="text-label-sm font-label-sm text-outline flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> New York, NY
+                            </p>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mb-stack-md flex-1">
+                        Scaling enterprise B2B SaaS products. Focused on user-centric growth strategies and data-driven decision making.
+                    </p>
+<div class="flex flex-wrap gap-stack-sm mb-stack-md">
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm rounded border border-outline-variant">Product Strategy</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm rounded border border-outline-variant">Agile</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm rounded border border-outline-variant">Data Analytics</span>
+</div>
+<button class="w-full py-2 border border-outline-variant text-on-surface text-label-md font-label-md rounded hover:bg-surface-container-low transition-colors">Connect</button>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-md hover:shadow-sm transition-shadow group flex flex-col">
+<div class="flex items-center gap-stack-md mb-stack-md">
+<img alt="Profile" class="w-16 h-16 rounded-full object-cover border border-surface-container-high" data-alt="A professional portrait of a female data scientist. Modern corporate workspace, clean lines, minimalist aesthetic, professional attire, soft natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjexZGPz3FJJcvtnjsi_MRHScTMbxoDLicTsQJtCjrZy-yqm9wM4Hx_nPCmv7BosBP7knZjSDUZ0XaozWmL7kbTlazhftc2D_LYr0v_Yiu5eNlM6dIYXF1ov4KRX7UTlCKCWe9z0GXpPqtCa8Ryfdli1dXRN7ErtwiLDtwyLDRq93pr41SFVu2Ci3CXF5jyWII4ZnWElCabDp2a2z6Dmfm6YL3Cc3u1qYVJJRgDVQNWklsgY2d2MasBg">
+<div>
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors">Elena Rodriguez</h3>
+<p class="text-label-md font-label-md text-on-surface-variant">Lead Data Scientist</p>
+<p class="text-label-sm font-label-sm text-outline flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Remote
+                            </p>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mb-stack-md flex-1">
+                        Specializing in predictive modeling and natural language processing. Turning complex data into actionable business insights.
+                    </p>
+<div class="flex flex-wrap gap-stack-sm mb-stack-md">
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm rounded border border-outline-variant">Machine Learning</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm rounded border border-outline-variant">Python</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm rounded border border-outline-variant">NLP</span>
+</div>
+<button class="w-full py-2 border border-outline-variant text-on-surface text-label-md font-label-md rounded hover:bg-surface-container-low transition-colors">Connect</button>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-md hover:shadow-sm transition-shadow group flex flex-col">
+<div class="flex items-center gap-stack-md mb-stack-md">
+<img alt="Profile" class="w-16 h-16 rounded-full object-cover border border-surface-container-high" data-alt="A clean professional portrait of a male UX designer. Minimalist studio background, white and grey tones, modern corporate vibe, thoughtful expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKI8LWsqE7kpWfaFVp4K5RRircX1xvlujYPfk-xK6oIEdAfcdYZZEnbVdX48_nCpwVxCt8h1NVETrIbZBoOkx9EYx_1wn_N3TprMMBgAclQJneiLZ0oMQzGRbTkAMcBb3hvXw--DUuUpCc1DYCBkuthm-q-yP31RjHtB31N4V1OZvxuySKSYQfsBlUNNmqfEQBfCVhMMVEJQaUkb3p5C0R1y8nxdz-MPiWbjqfDSBkCOw6c1dC13bQig">
+<div>
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors">David Kim</h3>
+<p class="text-label-md font-label-md text-on-surface-variant">Principal UX Designer</p>
+<p class="text-label-sm font-label-sm text-outline flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Seattle, WA
+                            </p>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mb-stack-md flex-1">
+                        Crafting intuitive and engaging user experiences for complex systems. Advocate for inclusive and accessible design practices.
+                    </p>
+<div class="flex flex-wrap gap-stack-sm mb-stack-md">
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm rounded border border-outline-variant">User Research</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm rounded border border-outline-variant">Interaction Design</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm rounded border border-outline-variant">Figma</span>
+</div>
+<button class="w-full py-2 border border-outline-variant text-on-surface text-label-md font-label-md rounded hover:bg-surface-container-low transition-colors">Connect</button>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-md hover:shadow-sm transition-shadow group flex flex-col">
+<div class="flex items-center gap-stack-md mb-stack-md">
+<img alt="Profile" class="w-16 h-16 rounded-full object-cover border border-surface-container-high" data-alt="A professional headshot of a female marketing executive. Bright modern office, minimalist aesthetic, confident look, wearing a dark blazer over a white shirt." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvzCkQ0JJxz1RqeLp-utJLopw-3sOqpe1712UtszacLgLk5mBEXa6-TUpCmP-GACzYyNanPXdl7Wp9ZEa7J2wgjxGANjpO88a56ToQ9L2CuknBafNyTmXLiXWsCKvN4CYvksiwkODbyrGRKRuuebRXvaUyJumUZaraFpYHwhTnC-_9dzXZp_2c_XYefIt2mCSMkfi5TALyS1LcC1LZsi1Mthw9g6meVCwVeSBwSyDfNUNmEbEKf1hFuw">
+<div>
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface group-hover:text-primary transition-colors">Aisha Patel</h3>
+<p class="text-label-md font-label-md text-on-surface-variant">VP of Marketing</p>
+<p class="text-label-sm font-label-sm text-outline flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Austin, TX
+                            </p>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant line-clamp-2 mb-stack-md flex-1">
+                        Driving brand growth and market penetration through innovative digital campaigns and strategic partnerships.
+                    </p>
+<div class="flex flex-wrap gap-stack-sm mb-stack-md">
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm rounded border border-outline-variant">Brand Strategy</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm rounded border border-outline-variant">Growth Marketing</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm rounded border border-outline-variant">GTM</span>
+</div>
+<button class="w-full py-2 border border-outline-variant text-on-surface text-label-md font-label-md rounded hover:bg-surface-container-low transition-colors">Connect</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 md:hidden bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold text-label-sm font-label-sm scale-95 transition-transform duration-150 hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors w-full h-full" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view">grid_view</span>
+<span class="">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant text-label-sm font-label-sm hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors w-full h-full" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="search">search</span>
+<span class="">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant text-label-sm font-label-sm hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors w-full h-full" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="group">group</span>
+<span class="">Network</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant text-label-sm font-label-sm hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors w-full h-full" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="account_circle">account_circle</span>
+<span class="">Profile</span>
+</a>
+</nav>
+
+
+</body></html>

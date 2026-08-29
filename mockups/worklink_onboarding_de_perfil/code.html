@@ -1,0 +1,220 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title class="">Collawork - Onboarding de Perfil</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "surface-variant": "#e0e3e8",
+                            "on-primary-fixed-variant": "#293ca0",
+                            "inverse-surface": "#2d3135",
+                            "error-container": "#ffdad6",
+                            "on-tertiary": "#ffffff",
+                            "surface": "#f7f9ff",
+                            "on-primary-container": "#cacfff",
+                            "secondary-fixed": "#6ffbbe",
+                            "error": "#ba1a1a",
+                            "on-primary-fixed": "#00105c",
+                            "surface-tint": "#4355b9",
+                            "surface-dim": "#d7dadf",
+                            "surface-container": "#ebeef3",
+                            "on-background": "#181c20",
+                            "on-surface": "#181c20",
+                            "on-secondary-fixed-variant": "#005236",
+                            "tertiary-fixed-dim": "#ffb784",
+                            "primary-fixed": "#dee0ff",
+                            "surface-bright": "#f7f9ff",
+                            "on-secondary-fixed": "#002113",
+                            "primary-container": "#3f51b5",
+                            "outline": "#757684",
+                            "on-error": "#ffffff",
+                            "on-primary": "#ffffff",
+                            "secondary-fixed-dim": "#4edea3",
+                            "secondary": "#006c49",
+                            "on-tertiary-fixed": "#301400",
+                            "tertiary": "#6c3400",
+                            "inverse-on-surface": "#eef1f6",
+                            "on-surface-variant": "#454652",
+                            "secondary-container": "#6cf8bb",
+                            "on-secondary": "#ffffff",
+                            "background": "#f7f9ff",
+                            "on-secondary-container": "#00714d",
+                            "primary": "#24389c",
+                            "on-tertiary-fixed-variant": "#713700",
+                            "surface-container-lowest": "#ffffff",
+                            "tertiary-fixed": "#ffdcc6",
+                            "primary-fixed-dim": "#bac3ff",
+                            "surface-container-high": "#e5e8ee",
+                            "tertiary-container": "#8f4700",
+                            "inverse-primary": "#bac3ff",
+                            "surface-container-highest": "#e0e3e8",
+                            "surface-container-low": "#f1f4f9",
+                            "on-tertiary-container": "#ffc7a2",
+                            "on-error-container": "#93000a",
+                            "outline-variant": "#c5c5d4"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                    },
+                    "spacing": {
+                            "stack-md": "12px",
+                            "base": "8px",
+                            "stack-sm": "4px",
+                            "margin-desktop": "64px",
+                            "gutter": "24px",
+                            "stack-lg": "24px",
+                            "margin-mobile": "16px",
+                            "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                            "label-md": ["Inter"],
+                            "body-lg": ["Inter"],
+                            "headline-lg": ["Inter"],
+                            "label-sm": ["Inter"],
+                            "headline-lg-mobile": ["Inter"],
+                            "body-md": ["Inter"],
+                            "display-lg": ["Inter"],
+                            "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F8F9FA; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .chip { background-color: #F3F4F6; }
+        .chip-selected { background-color: theme('colors.primary-container'); color: theme('colors.on-primary-container'); }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: theme('colors.primary');
+            box-shadow: 0 0 0 2px theme('colors.primary-fixed-dim');
+        }
+    </style>
+</head>
+<body class="text-on-background font-body-md antialiased pt-16">
+<!-- TopNavBar (Suppressed due to linear/transactional onboarding intent, but requested in prompt. Given the strict hierarchy, I will render it as a simple structural shell if needed, but the instructions say "Automatic Suppression: You MUST exclude the navigation shell if the page intent is: Linear/Transactional: Login, Sign-up, Onboarding...". Since it's explicitly requested in the prompt "Header: TopNavBar component", I will render a minimal, brand-only version to satisfy both intent and prompt, focusing on the brand anchor). 
+    Wait, the Shared Components Logic says: "Automatic Suppression: You MUST exclude the navigation shell if the page intent is: Linear/Transactional". I will exclude the navigation links and just show the brand header to anchor the onboarding flow. -->
+<header class="fixed top-0 w-full z-50 flex justify-center items-center px-margin-mobile md:px-margin-desktop h-16 bg-surface-container-lowest border-b border-outline-variant">
+<div class="flex items-center gap-2 text-headline-md font-headline-md font-bold text-primary"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC29kmRYZUfX3-5bfwiswDbUfIAnQHMn-k4VhlXF_lXQA0zE3ZOfk59ElG6ec4t_Pjw_iMo7XJfvc4BI3j6z4yJQERykkWPhqaJ_2Fb-8ye4t83veZgBylCQylGXDEr_Y8S4DqrvPil39aqnvs5v6ceWo0GsdTPXcWxR_ev2ropIRlzr759SPUAQ6kuKzU2bOSTsLZJO-36-IBJZpuiAkUtvJ0gK87EQ1m3pZYetgpo_tU2-Nc4yvnjiw" alt="Collawork Logo" class="h-8 w-auto"><span class="">Collawork</span></div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="max-w-3xl mx-auto bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden">
+<!-- Banner Upload Area -->
+<div class="relative w-full h-48 md:h-64 bg-surface-container flex flex-col items-center justify-center group cursor-pointer border-b border-outline-variant">
+<span class="material-symbols-outlined text-outline text-4xl mb-2 group-hover:text-primary transition-colors">add_photo_alternate</span>
+<span class="text-label-md font-label-md text-on-surface-variant group-hover:text-primary transition-colors">Upload Profile Banner</span>
+<!-- Hidden file input -->
+<input aria-label="Upload profile banner" class="absolute inset-0 opacity-0 cursor-pointer" type="file">
+</div>
+<div class="p-gutter pt-0 relative">
+<!-- Profile Picture Upload Area (Overlapping Banner) -->
+<div class="absolute -top-16 md:-top-20 left-gutter">
+<div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-surface-container-lowest bg-surface-container flex flex-col items-center justify-center overflow-hidden group cursor-pointer">
+<span class="material-symbols-outlined text-outline text-3xl group-hover:text-primary transition-colors z-10">person_add</span>
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<input aria-label="Upload profile picture" class="absolute inset-0 opacity-0 cursor-pointer z-20" type="file">
+</div>
+</div>
+<div class="pt-20 md:pt-24 mt-stack-md">
+<h1 class="text-headline-lg font-headline-lg text-on-background mb-2">Complete Your Profile</h1>
+<p class="text-body-md font-body-md text-on-surface-variant mb-stack-lg">Let your professional network know who you are and what you excel at.</p>
+<form class="space-y-stack-lg">
+<!-- Personal Info Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+<div class="flex flex-col space-y-stack-sm">
+<label class="text-label-md font-label-md text-on-surface" for="fullName">Full Name</label>
+<input class="px-3 py-2 border border-outline-variant rounded bg-surface-container-lowest text-body-md text-on-surface placeholder-outline" id="fullName" placeholder="Jane Doe" type="text">
+</div>
+<div class="flex flex-col space-y-stack-sm">
+<label class="text-label-md font-label-md text-on-surface" for="professionalTitle">Professional Title</label>
+<input class="px-3 py-2 border border-outline-variant rounded bg-surface-container-lowest text-body-md text-on-surface placeholder-outline" id="professionalTitle" placeholder="Senior UX Designer" type="text">
+</div>
+</div>
+<!-- Location -->
+<div class="flex flex-col space-y-stack-sm">
+<label class="text-label-md font-label-md text-on-surface" for="location">Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">location_on</span>
+<input class="w-full pl-10 pr-3 py-2 border border-outline-variant rounded bg-surface-container-lowest text-body-md text-on-surface placeholder-outline" id="location" placeholder="City, Country" type="text">
+</div>
+</div>
+<!-- Bio -->
+<div class="flex flex-col space-y-stack-sm">
+<label class="text-label-md font-label-md text-on-surface" for="bio">Short Bio</label>
+<textarea class="w-full px-3 py-2 border border-outline-variant rounded bg-surface-container-lowest text-body-md text-on-surface placeholder-outline resize-y" id="bio" placeholder="Briefly describe your professional background and goals..." rows="4"></textarea>
+<div class="text-right text-label-sm font-label-sm text-on-surface-variant">0 / 300</div>
+</div>
+<!-- Skill Tags -->
+<div class="flex flex-col space-y-stack-md">
+<label class="text-label-md font-label-md text-on-surface">Core Skills</label>
+<p class="text-label-sm font-label-sm text-on-surface-variant mb-2">Select areas of expertise to help collaborators find you.</p>
+<div class="flex flex-wrap gap-2" id="skillContainer">
+<button class="chip px-3 py-1 rounded text-label-md font-label-md text-on-surface-variant transition-colors hover:bg-surface-variant" onclick="this.classList.toggle('chip-selected'); this.classList.toggle('text-on-surface-variant');" type="button">Design</button>
+<button class="chip px-3 py-1 rounded text-label-md font-label-md text-on-surface-variant transition-colors hover:bg-surface-variant" onclick="this.classList.toggle('chip-selected'); this.classList.toggle('text-on-surface-variant');" type="button">Development</button>
+<button class="chip px-3 py-1 rounded text-label-md font-label-md text-on-surface-variant transition-colors hover:bg-surface-variant" onclick="this.classList.toggle('chip-selected'); this.classList.toggle('text-on-surface-variant');" type="button">Marketing</button>
+<button class="chip px-3 py-1 rounded text-label-md font-label-md text-on-surface-variant transition-colors hover:bg-surface-variant" onclick="this.classList.toggle('chip-selected'); this.classList.toggle('text-on-surface-variant');" type="button">Product Management</button>
+<button class="chip px-3 py-1 rounded text-label-md font-label-md text-on-surface-variant transition-colors hover:bg-surface-variant" onclick="this.classList.toggle('chip-selected'); this.classList.toggle('text-on-surface-variant');" type="button">Data Analysis</button>
+<div class="relative flex items-center">
+<input class="px-3 py-1 border border-outline-variant rounded bg-surface-container-lowest text-label-md text-on-surface placeholder-outline w-32 h-[28px]" onkeypress="if(event.key === 'Enter') { event.preventDefault(); addSkill(this); }" placeholder="+ Add skill" type="text">
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-stack-lg border-t border-outline-variant flex justify-end">
+<button class="px-6 py-3 bg-primary text-on-primary rounded text-label-md font-label-md hover:bg-on-primary-fixed-variant transition-colors" type="button">
+                                Complete Profile
+                            </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+<script>
+        function addSkill(input) {
+            const val = input.value.trim();
+            if (val) {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'chip chip-selected px-3 py-1 rounded text-label-md font-label-md transition-colors';
+                btn.textContent = val;
+                btn.onclick = function() {
+                    this.classList.toggle('chip-selected');
+                    this.classList.toggle('text-on-surface-variant');
+                    if(!this.classList.contains('chip-selected')) {
+                        this.className = 'chip px-3 py-1 rounded text-label-md font-label-md text-on-surface-variant transition-colors hover:bg-surface-variant';
+                    } else {
+                         this.className = 'chip chip-selected px-3 py-1 rounded text-label-md font-label-md transition-colors';
+                    }
+                };
+                
+                input.parentElement.parentNode.insertBefore(btn, input.parentElement);
+                input.value = '';
+            }
+        }
+    </script>
+
+
+</body></html>
