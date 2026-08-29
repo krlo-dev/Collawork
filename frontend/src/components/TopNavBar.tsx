@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
+import { Logo } from "@/components/Logo";
 
 export function TopNavBar() {
   const { user, logout } = useAuth();
@@ -16,7 +17,8 @@ export function TopNavBar() {
   return (
     <nav className="fixed top-0 w-full z-50 hidden md:flex justify-between items-center px-16 h-16 bg-surface-container-lowest border-b border-outline-variant">
       <div className="flex items-center gap-6">
-        <Link href="/discover" className="flex items-center gap-1">
+        <Link href="/discover" className="flex items-center gap-2 opacity-100 hover:opacity-80 transition-opacity">
+          <Logo className="w-7 h-7" />
           <span className="text-headline-md font-bold text-primary">Collawork</span>
         </Link>
       </div>
